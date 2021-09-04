@@ -164,9 +164,7 @@ def get_data():
             air_condition = get_air_condition(soup)
             new_apartment = Apartment(city, price, squre_meter, house_type, rooms, bars, furniture, lift,
                                       parking, air_condition)
-            # print(new_apartment)
-            # print(apartment_link)
-            # print('\n')
+            
             apartments.append(new_apartment)
 
         except :
