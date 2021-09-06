@@ -3,6 +3,14 @@ import requests
 from get_links import get_all_links
 
 
+# return true if the image us of type "/Images/checked.png"
+def image_checked(image):
+    if image == "/Images/uncheked.png":
+        return False
+    elif image == "/Images/checked.png":
+        return True
+    
+
 class Apartment:
     def __init__(self, city, price, area, house_type, rooms, bars, furniture, lift, parking, air_condition):
         self.city = city
@@ -99,28 +107,19 @@ def get_house_type(soup):
 # return if the house has bars
 def has_bars(soup):
     image = soup.find_all("img", class_="itemsAd")[0]["src"]
-    if image == "/Images/uncheked.png":
-        return False
-    elif image == "/Images/checked.png":
-        return True
+    return image_checked(image)
 
 
 # return if the house has furniture
 def has_furniture(soup):
     image = soup.find_all("img", class_="itemsAd")[1]["src"]
-    if image == "/Images/uncheked.png":
-        return False
-    elif image == "/Images/checked.png":
-        return True
+    return image_checked(image)
 
 
 # return if the house has lift
 def has_lift(soup):
     image = soup.find_all("img", class_="itemsAd")[2]["src"]
-    if image == "/Images/uncheked.png":
-        return False
-    elif image == "/Images/checked.png":
-        return True
+    return image_checked(image)
 
 
 # return the amounts of balconies in the house
