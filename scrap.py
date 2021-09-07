@@ -141,32 +141,37 @@ def get_air_condition(soup):
     return air_condition.split(':')[1]
 
 
+# construct apartment object
+def make_apartment(soup, apartment_link):
+    try:
+        city = get_city(soup)
+        price = get_price(soup)
+        squre_meter = get_area(soup)
+        house_type = get_house_type(soup)
+        rooms = get_rooms(soup)
+        lift = has_lift(soup)
+        furniture = has_furniture(soup)
+        bars = has_bars(soup)
+        parking = get_parking(soup)
+        air_condition = get_air_condition(soup)
+        new_apartment = Apartment(city, price, squre_meter, house_type, rooms, bars, furniture, lift,
+                                  parking, air_condition)
+
+        return new_apartment
+
+    except:
+        print("exception in link:" + apartment_link)
+
+
 # return all the apartments objects
 def get_data():
     apartments_links = get_all_links()
-
     apartments = []
+    
     for apartment_link in apartments_links:
         htmt_text = requests.get(apartment_link).text
         soup = BeautifulSoup(htmt_text, "lxml")
-
-        try:
-            city = get_city(soup)
-            price = get_price(soup)
-            squre_meter = get_area(soup)
-            house_type = get_house_type(soup)
-            rooms = get_rooms(soup)
-            lift = has_lift(soup)
-            furniture = has_furniture(soup)
-            bars = has_bars(soup)
-            parking = get_parking(soup)
-            air_condition = get_air_condition(soup)
-            new_apartment = Apartment(city, price, squre_meter, house_type, rooms, bars, furniture, lift,
-                                      parking, air_condition)
-            
-            apartments.append(new_apartment)
-
-        except :
-            print("exception in link:" + apartment_link)
+        apartments.append(make_apartment(soup, apartment_link))
 
     return apartments
+
