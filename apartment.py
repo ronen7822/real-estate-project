@@ -68,7 +68,7 @@ def make_apartment(apartment_link):
 
 
 # return all the apartments objects
-def get_data():
+def get_apartments():
     apartments_links = get_all_links()
     apartments = []
 
