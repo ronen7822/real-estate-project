@@ -1,6 +1,6 @@
 import csv
 import time
-from apartment import get_data
+from apartment import get_apartments
 
 # the names of the columns in the csv file
 head_line = ['city', 'neighborhood', 'price', 'house type', 'house_area', 'garden_area', 'rooms', 'balconies',
@@ -19,7 +19,7 @@ def get_row(apartment):
 
 # writes the apartments data to the csv file
 def write_to_csv():
-    apartments_data = get_data()
+    apartments_data = get_apartments()
 
     with open('apartments.csv', "w", newline='', encoding="utf-8") as csvfile:
         csv_writer = csv.writer(csvfile)
