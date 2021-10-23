@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="img"></div>
+<form class="form">
+
+</div>
+<h2>City</h2>
+<div>
+<select class="location" name="" id="uiLocations">
+<option value="" disabled="disabled" selected="selected">Choose a Location</option>
+<option>Electronic City</option>
+</select>
+
+</div>
+<h2>Neighborhood</h2>
+<div>
+<select class="location" name="" id="uiNeighborhoods">
+<option value="" disabled="disabled" selected="selected">Choose a Neighborhood</option>
+</select>
+
+</div>
+<h2>House Type</h2>
+<div>
+<select class="location" name="" id="uiTypes">
+<option value="" disabled="disabled" selected="selected">Choose a house type</option>
+<option>apartment</option>
+</select>
+
+
+<h2>house area (Square Meter)</h2>
+    <input class="area"  type="text" id="houseArea" class="floatLabel" name="Squareft" value="100">
+
+<h2>garden area (Square Meter)</h2>
+    <input class="area"  type="text" id="gardenArea" class="floatLabel" name="Squareft" value="0">
+
+<h2>number of rooms</h2>
+    <input class="area"  type="text" id="rooms" class="floatLabel" name="Squareft" value="4">
+
+<h2>balcony</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-bhk-1" name="uiBalcony" value="1"/>
+	<label for="radio-bhk-1">false</label>
+	<input type="radio" id="radio-bhk-2" name="uiBalcony" value="2" checked/>
+	<label for="radio-bhk-2">true</label>
+</div>
+
+<h2>air conidtion</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-bath-1" name="uiAir" value="1"/>
+	<label for="radio-bath-1">false</label>
+	<input type="radio" id="radio-bath-2" name="uiAir" value="2" checked/>
+	<label for="radio-bath-2">true</label>
+</div>
+
+<h2>parking</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-paking-1" name="uiParking" value="1"/>
+	<label for="radio-paking-1">false</label>
+	<input type="radio" id="radio-paking-2" name="uiParking" value="2" checked/>
+	<label for="radio-paking-2">true</label>
+</div>
+
+<h2>protected room</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-room-1" name="uiProtected" value="1"/>
+	<label for="radio-room-1">false</label>
+	<input type="radio" id="radio-room-2" name="uiProtected" value="2" checked/>
+	<label for="radio-room-2">true</label>
+</div>
+
+<h2>elevator</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-elevator-1" name="uiElevator" value="1"/>
+	<label for="radio-elevator-1">false</label>
+	<input type="radio" id="radio-elevator-2" name="uiElevator" value="2" checked/>
+	<label for="radio-elevator-2">true</label>
+</div>
+
+<h2>sun balcony</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-sun-1" name="uiSun" value="1"/>
+	<label for="radio-sun-1">false</label>
+	<input type="radio" id="radio-sun-2" name="uiSun" value="2" checked/>
+	<label for="radio-sun-2">true</label>
+</div>
+
+<h2>renovated</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-renovated-1" name="uiRenovated" value="1"/>
+	<label for="radio-renovated-1">false</label>
+	<input type="radio" id="radio-renovated-2" name="uiRenovated" value="2" checked/>
+	<label for="radio-renovated-2">true</label>
+</div>
+
+<h2>furnutire</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-furnutire-1" name="uiFurnutire" value="1"/>
+	<label for="radio-furnutire-1">false</label>
+	<input type="radio" id="radio-furnutire-2" name="uiFurnutire" value="2" checked/>
+	<label for="radio-furnutire-2">true</label>
+</div>
+
+
+<h2>accesbilty</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-accesbilty-1" name="uiaccesbilty" value="1"/>
+	<label for="radio-accesbilty-1">false</label>
+	<input type="radio" id="radio-accesbilty-2" name="uiaccesbilty" value="2" checked/>
+	<label for="radio-accesbilty-2">true</label>
+</div>
+
+<h2>bars</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-bars-1" name="uibars" value="1"/>
+	<label for="radio-bars-1">false</label>
+	<input type="radio" id="radio-bars-2" name="uibars" value="2" checked/>
+	<label for="radio-bars-2">true</label>
+</div>
+
+<h2>storage</h2>
+<div class="switch-field">
+	<input type="radio" id="radio-storage-1" name="uistorage" value="1"/>
+	<label for="radio-storage-1">false</label>
+	<input type="radio" id="radio-storage-2" name="uistorage" value="2" checked/>
+	<label for="radio-storage-2">true</label>
+</div>
+
+
+
+</div>
+	<button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+	<div id="uiEstimatedPrice" class="result">	<h2></h2>
+ </div>
+</body>
+</html>
