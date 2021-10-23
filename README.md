@@ -1,1 +1,1 @@
-# real-estate-project
+# real estate AI project
